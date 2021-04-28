@@ -26,5 +26,8 @@ class Hiker
   end
 
   def possible_trails
+    trails_at_parks_visited.find_all do |trail|
+      trail.level == @experience_level
+    end
   end
 end
