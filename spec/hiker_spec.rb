@@ -51,4 +51,15 @@ RSpec.describe Hiker do
       expect(hiker.snacks).to eq(expected)
     end
   end
+
+  describe '#visit_park' do
+    it 'adds a park to the park array' do
+      hiker = Hiker.new('Dora', :moderate)
+      park = Park.new('Capitol Reef')
+
+      hiker.visit_park(park)
+
+      expect(hiker.parks_visited).to eq([park])
+    end
+  end
 end
