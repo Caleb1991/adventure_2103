@@ -28,6 +28,7 @@ RSpec.describe Hiker do
 
       expect(hiker.snacks).to eq({})
     end
+  end
 
   describe '#pack' do
     it 'packs a given quantity of a snack' do
