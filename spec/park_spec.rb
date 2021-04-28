@@ -84,7 +84,7 @@ RSpec.describe Park do
       park_2.add_trail(trail_5)
       park_2.add_trail(trail_6)
 
-      expect(park_1.trails_level_helper(:easy)).to eq([trail_1])
+      expect(park_1.trails_level_helper(:easy)).to eq(['Grand Wash'])
     end
   end
 
@@ -113,7 +113,7 @@ RSpec.describe Park do
 end
 
   describe '#trails_by_level' do
-    xit 'returns hash of level equal to matching trails' do
+    it 'returns hash of level equal to matching trails' do
       park_1 = Park.new('Capitol Reef')
       park_2 = Park.new('Bryce Canyon')
       trail_1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
