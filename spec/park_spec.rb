@@ -35,4 +35,19 @@ RSpec.describe Park do
       expect(park.trails).to eq([trail_1, trail_2])
     end
   end
+
+  describe '#trails_shorter_than' do
+    it 'returns all trails shorter than the given distance' do
+      park = Park.new('Capitol Reef')
+      trail_1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
+      trail_2 = Trail.new({name: 'Cohab Canyon', length: '1.7 miles', level: :moderate})
+      trail_3 = Trail.new({name: 'Chimney Rock Loop', length: '3.6 miles', level: :strenuous})
+
+      park.add_trail(trail_1)
+      park.add_trail(trail_2)
+      park.add_trail(trail_3)
+
+      expect(park.trails_shorter_than(2.5)).to eq([trail_1, trail_2])
+    end
+  end
 end
