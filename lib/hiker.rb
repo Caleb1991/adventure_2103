@@ -30,4 +30,10 @@ class Hiker
       trail.level == @experience_level
     end
   end
+
+  def favorite_snack
+    @snacks.max do |snack|
+      snack[1]
+    end[0]
+  end
 end
