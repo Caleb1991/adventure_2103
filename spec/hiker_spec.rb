@@ -28,5 +28,20 @@ RSpec.describe Hiker do
 
       expect(hiker.snacks).to eq({})
     end
+
+  describe '#pack' do
+    it 'packs a given quantity of a snack' do
+      hiker = Hiker.new('Dora', :moderate)
+
+      hiker.pack('water', 1)
+      hiker.pack('trail mix', 3)
+
+      expected = {
+        'water' => 1,
+        'trail mix' => 3
+      }
+
+      expect(hiker.snacks).to eq(expected)
+    end
   end
 end
