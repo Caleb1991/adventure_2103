@@ -91,7 +91,7 @@ RSpec.describe Hiker do
   end
 
   describe '#possible_trails' do
-    xit 'returns all trails at parks that have been visited and match experience level' do
+    it 'returns all trails at parks that have been visited and match experience level' do
       hiker_1 = Hiker.new('Dora', :moderate)
       park_1 = Park.new('Capitol Reef')
       park_2 = Park.new('Bryce Canyon')
@@ -113,7 +113,7 @@ RSpec.describe Hiker do
 
       expected = [trail_2, trail_4, trail_6]
 
-      expect(hiker.possible_trails).to eq(expected)
+      expect(hiker_1.possible_trails).to eq(expected)
     end
   end
 end
