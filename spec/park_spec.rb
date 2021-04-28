@@ -50,4 +50,19 @@ RSpec.describe Park do
       expect(park.trails_shorter_than(2.5)).to eq([trail_1, trail_2])
     end
   end
+
+  describe '#hikeable_miles' do
+    it 'returns the total miles of all trails' do
+      park = Park.new('Capitol Reef')
+      trail_1 = Trail.new({name: 'Grand Wash', length: '2.2 miles', level: :easy})
+      trail_2 = Trail.new({name: 'Cohab Canyon', length: '1.7 miles', level: :moderate})
+      trail_3 = Trail.new({name: 'Chimney Rock Loop', length: '3.6 miles', level: :strenuous})
+
+      park.add_trail(trail_1)
+      park.add_trail(trail_2)
+      park.add_trail(trail_3)
+
+      expect(park.hikeable_miles).to eq(7.5)
+    end
+  end
 end
