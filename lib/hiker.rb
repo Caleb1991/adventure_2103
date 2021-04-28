@@ -18,4 +18,13 @@ class Hiker
   def visit_park(park)
     @parks_visited << park
   end
+
+  def trails_at_parks_visited
+    @parks_visited.flat_map do |park|
+      park.trails
+    end
+  end
+
+  def possible_trails
+  end
 end
