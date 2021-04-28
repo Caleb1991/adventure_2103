@@ -29,10 +29,11 @@ RSpec.describe Hiker do
       expect(hiker.snacks).to eq({})
     end
 
-    it 'has not visited parks bty default'
-    hiker = Hiker.new('Dora', :moderate)
+    it 'has not visited parks by default' do
+      hiker = Hiker.new('Dora', :moderate)
 
-    expect(hiker.parks_visited).to eq([])
+      expect(hiker.parks_visited).to eq([])
+    end
   end
 
   describe '#pack' do
