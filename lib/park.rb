@@ -22,4 +22,29 @@ class Park
       trail.length
     end
   end
+
+  def trails_by_level
+    hash = {}
+
+    second_trail_level_helper.each do |level|
+      hash[level] = trails_level_helper(level)
+    end
+    hash
+  end
+
+  def trails_level_helper(difficulty)
+    instances = @trails.find_all do |trail|
+      trail.level == difficulty
+    end
+
+    names = instances.map do |trail|
+      trail.name
+    end
+  end
+
+  def second_trail_level_helper
+    @trails.map do |trail|
+      trail.level
+    end.uniq
+  end
 end
